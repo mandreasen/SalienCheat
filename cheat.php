@@ -168,6 +168,8 @@ do
 
 	sleep( $WaitTime );
 	
+	Msg( '{yellow}Submitting score of ' . GetScoreForZone( $Zone ) );
+
 	$Data = SendPOST( 'ITerritoryControlMinigameService/ReportScore', 'access_token=' . $Token . '&score=' . GetScoreForZone( $Zone ) . '&language=english' );
 
 	if( isset( $Data[ 'response' ][ 'new_score' ] ) )
