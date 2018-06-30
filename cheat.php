@@ -99,6 +99,11 @@ $LastKnownPlanet = 0;
 $BestPlanetAndZone = 0;
 $RandomizeZone = 0;
 
+if( isset( $_SERVER[ 'ALWAYS_RANDOMIZE_ZONE' ] ) )
+{
+	$RandomizeZone = (bool)$_SERVER[ 'ALWAYS_RANDOMIZE_ZONE' ];
+}
+
 if( ini_get( 'precision' ) < 18 )
 {
 	Msg( '{teal}Fixed php float precision (was ' . ini_get( 'precision' ) . ')' );
